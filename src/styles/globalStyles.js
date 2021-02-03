@@ -4,7 +4,7 @@ import { fontSizes } from "./base/variables";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    @import url("https://fonts.googleapis.com/css?family=Fira+Sans&display=swap");
+ 
     margin: 0;
     font-family: "Fira Sans", sans-serif;
     font-size: ${fontSizes.mainSize};
