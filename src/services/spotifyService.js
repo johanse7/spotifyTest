@@ -24,18 +24,20 @@ const getAcessToken = async () => {
   return token;
 };
 
-export const getTrackByName = async ({ keyWord }) => {
+export const getTrackByName = async ({ keyWord = "", nextUrl = null }) => {
+  const url =
+    nextUrl ||
+    `${config.urlApi}/v1/search?q=${keyWord}&type=track&limit=${config.limit}`;
+
   const token = await getAcessToken();
-  const result = await fetch(
-    `${config.urlApi}/v1/search?q=${keyWord}&type=track&limit=${config.limit}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+
+  const result = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return await result.json();
 };

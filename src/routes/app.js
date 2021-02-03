@@ -5,6 +5,7 @@ import GlobalStyle from "../styles/globalStyles";
 import history from "../utils/history";
 import Home from "../containers/home";
 import Detail from "../containers/detail";
+import NotFound from "../components/common/notFound";
 
 const App = () => (
   <>
@@ -18,7 +19,7 @@ const App = () => (
           </Layout>
         </Route>
         <Route path={["*"]}>
-          <div>Error</div>
+          <NotFound />
         </Route>
       </Switch>
     </Router>

@@ -9,6 +9,7 @@ const useTracks = (delaySearch = 600) => {
   const refInput = useRef();
   const [keyWord, setKeyWord] = useState(null);
   const [loader, setLoader] = useState(false);
+  const [loadingNextPage, setLoadingNextPage] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -33,12 +34,34 @@ const useTracks = (delaySearch = 600) => {
     })();
   }, [keyWord, delaySearch]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        if (!keyWord) return;
+
+        setLoadingNextPage(true);
+        const {
+          tracks: { items, next },
+        } = await getTrackByName({ nextUrl: urlNextResults });
+
+        setTraks((prevState) => [...prevState, ...items]);
+        setLoadingNextPage(false);
+        localStorage.setItem(NEX_URL_RESULTS, next);
+        localStorage.setItem(STORAGE_TRACKS, JSON.stringify(tracks));
+      } catch (error) {
+        setLoadingNextPage(false);
+        console.error(error.toString());
+      }
+    })();
+  }, [urlNextResults]);
+
   return {
     tracks,
     refInput,
     setKeyWord,
     setUrlNextResults,
     loader,
+    loadingNextPage,
   };
 };
 

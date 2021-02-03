@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import { grayscale } from "../base/colors";
+import { device } from "../../styles/base/variables";
 
 const SearchInput = styled.div`
   position: relative;
   display: flex;
-  min-width: 100px;
-  width: 100%;
+  min-width: 100%;
+
+  ${device.desktop(`
+       min-width: unset;
+       width: 50%;
+     `)}
 
   .search-icon {
     position: absolute;
@@ -17,7 +22,7 @@ const SearchInput = styled.div`
   & input {
     border-radius: 15px;
     height: 40px;
-    width: 550px;
+    width: 100%;
     padding: 2px 23px 2px 30px;
     outline: 0;
     border: solid 1.5px ${grayscale.graymedium};

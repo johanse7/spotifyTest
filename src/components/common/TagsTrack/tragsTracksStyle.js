@@ -7,6 +7,7 @@ const TagsStyle = styled.ul`
   padding: 0;
   color: rgb(255 255 255 / 70%);
   margin: 0.5em 0;
+  flex-wrap: wrap;
   & .tag {
     display: flex;
     &:before {

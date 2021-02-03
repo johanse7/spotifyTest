@@ -42,6 +42,7 @@ const DetailContainer = styled.section`
 
     & .track-name {
       color: ${grayscale.white};
+      font-size: ${fontSizes.mainSize};
     }
   }
 `;

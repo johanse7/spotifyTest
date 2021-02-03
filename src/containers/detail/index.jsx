@@ -17,6 +17,7 @@ const Detail = ({ match }) => {
           name={track?.name}
           album={track?.album?.name}
           date={track?.album?.release_date}
+          duration={track?.duration_ms}
         />
       )}
     </>
