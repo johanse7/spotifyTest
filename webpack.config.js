@@ -3,7 +3,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devtool: "source-map",
   watch: true,
 

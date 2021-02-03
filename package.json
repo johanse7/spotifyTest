@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack  &&  node ./src/utils/createEnv.js",
+    "build": "webpack --mode=production &&  node ./src/utils/createEnv.js",
     "dev": "webpack serve --open"
   },
   "keywords": [],
