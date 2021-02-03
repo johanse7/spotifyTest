@@ -9,7 +9,6 @@ const DetailContainer = styled.section`
   align-items: center;
   gap: 1em;
   margin: auto 0;
-  border: 1px solid;
   /* top: 50%;
   transform: translateY(-50%); */
   justify-content: center;

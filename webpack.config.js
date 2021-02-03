@@ -3,16 +3,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: "production",
   devtool: "source-map",
-  watch: true,
 
   watchOptions: {
     ignored: ["node_modules/**"],
   },
   devServer: {
     historyApiFallback: true,
-    https: true,
   },
 
   entry: "./src/index.js",
